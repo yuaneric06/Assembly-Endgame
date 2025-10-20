@@ -1,42 +1,197 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header > h1 {
+    font-size: 26px;
+    font-weight: 500;
+    font-family: Hanken Grotesk, sans-serif;
+    margin-bottom: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+header > p {
+    font-size: 14px;
+    text-wrap: pretty;
+    height: 36px;
+    width: 400px;
+    font-weight: 500;
+    font-family: Hanken Grotesk, sans-serif;
+    margin: 5px auto 25px auto;
 }
 
-.card {
-  padding: 2em;
+.game-status {
+    text-align: center;
+    width: fill;
+    height: hug;
+    justify-content: center;
+    padding: 6px 0;
+    border-radius: 4px;
 }
 
-.read-the-docs {
-  color: #888;
+.game-status > h2 {
+    font-family: Hanken Grotesk;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0px 0px -5px 0px;
+}
+
+.game-status > p {
+    font-family: Hanken Grotesk;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0px;
+}
+
+section.game-status.won {
+    background-color: #10A95B;
+}
+
+section.game-status.lose {
+    background-color: #BA2A2A;
+}
+
+section.game-status.farewell{
+    background-color: #7A5EA7;
+    border: 1px dashed #323232;
+    height: 59px;
+    display: flex;
+    align-items: center;
+}
+
+.farewell-message {
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+
+.language-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 400px;
+    text-align: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+.language-bar > h3 {
+    position: relative;
+    font-family: Hanken Grotesk;
+    font-weight: 700;
+    font-style: bold;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 2px;
+}
+
+.lost::before {
+    content: "💀";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 0.85rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.current-word {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin: 30px auto 40px auto;
+}
+
+.current-word > span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    color: #F9F4DA;
+    background-color: #323232;
+    border-bottom: solid;
+    border-bottom-width: 2px;
+    margin: 2px;
+    font-size: 30px;
+}
+
+.current-word span.not-guessed {
+    color: #BA2A2A;
+    border-color: #F9F4DA;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 480px;
+    gap: 6px;
+    margin-bottom: 40px;
+}
+
+
+
+section.keyboard > button {
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    border: 1px;
+    padding: 6px;
+    background-color: #FCBA29;
+    border-color: #D7D7D7;
+    color: black;
+    font-family: Hanken Grotesk;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+section.keyboard button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+section.keyboard > button.correct {
+    background-color: #10A95B;
+}
+
+section.keyboard > button.wrong {
+    background-color: #EC5D49;
+}
+.new-game {
+    display: flex;
+    justify-content: center;
+}
+
+.new-game > button {
+    padding: 6px 12px;
+    border: 1px;
+    border-radius: 4px;
+    width: 228px;
+    height: 40px;
+    background-color: #11B5E5;
+    border-color: #D7D7D7;
+    color: white;
+    font-family: Hanken Grotesk;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 40px;
 }
